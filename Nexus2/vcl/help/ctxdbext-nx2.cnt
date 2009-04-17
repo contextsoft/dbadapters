@@ -1,0 +1,27 @@
+:Base ctxdbext-nx2.hlp
+:Title  Context Database Extensions (Nexus 2)
+:Index Index for ctxdbext-nx2.hlp=ctxdbext-nx2.hlp
+1 Context Database Extensions (Nexus 2)
+2 About Context Database Extensions (Nexus 2)=IDH_Context Database Extensions (Nexus 2)_Project
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TnxDatabaseExt=IDH_TnxDatabaseExt
+2 TnxOpenDatabase=IDH_TnxOpenDatabase
+2 TnxOpenDatabaseDialog=IDH_TnxOpenDatabaseDialog
+2 TnxRangeCursor=IDH_TnxRangeCursor
+2 Alphabetical Object and Component Listing, By Unit
+3 nxDBExt
+3 TnxDatabaseExt=IDH_TnxDatabaseExt
+3 TnxRangeCursor=IDH_TnxRangeCursor
+3 nxOpenDatabase
+3 TnxOpenDatabase=IDH_TnxOpenDatabase
+3 TnxOpenDatabaseDialog=IDH_TnxOpenDatabaseDialog
+2 Alphabetical Routine Listing
+2 GetDatabaseURL=IDH_GetDatabaseURL_100836
+2 SetDatabaseURL=IDH_SetDatabaseURL_100837
+2 Alphabetical Routine Listing, By Unit
+3 nxDBExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100836
+3 SetDatabaseURL=IDH_SetDatabaseURL_100837
+2 Alphabetical Data Type Listing, By Unit

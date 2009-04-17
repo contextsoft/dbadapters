@@ -1,0 +1,48 @@
+:Base ctxdbext_dbisam3.hlp
+:Title  Context Database Extensions (DBISAM 3)
+:Index Index for ctxdbext_dbisam3.hlp=ctxdbext_dbisam3.hlp
+1 Context Database Extensions (DBISAM 3)
+2 About Context Database Extensions (DBISAM 3)=IDH_Context Database Extensions (DBISAM 3)_Project
+2 Examples
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TDBISAMDatabaseExt=IDH_TDBISAMDatabaseExt
+2 TDBISAMEvents=IDH_TDBISAMEvents
+2 TDBISAMOpenDatabase=IDH_TDBISAMOpenDatabase
+2 TDBISAMOpenDatabaseDialog=IDH_TDBISAMOpenDatabaseDialog
+2 TDBISAMQueryExt=IDH_TDBISAMQueryExt
+2 TDBISAMRangeCursor=IDH_TDBISAMRangeCursor
+2 TDBISAMTableExt=IDH_TDBISAMTableExt
+2 Alphabetical Object and Component Listing, By Unit
+3 DBISAMEv
+3 TDBISAMEvents=IDH_TDBISAMEvents
+3 DBISAMExt
+3 TDBISAMDatabaseExt=IDH_TDBISAMDatabaseExt
+3 TDBISAMQueryExt=IDH_TDBISAMQueryExt
+3 TDBISAMRangeCursor=IDH_TDBISAMRangeCursor
+3 TDBISAMTableExt=IDH_TDBISAMTableExt
+3 DBISAMOpenDatabase
+3 TDBISAMOpenDatabase=IDH_TDBISAMOpenDatabase
+3 TDBISAMOpenDatabaseDialog=IDH_TDBISAMOpenDatabaseDialog
+2 Alphabetical Routine Listing
+2 DecodeDatabaseURL=IDH_DecodeDatabaseURL_100767
+2 EncodeDatabaseURL=IDH_EncodeDatabaseURL_100768
+2 GetDatabaseURL=IDH_GetDatabaseURL_100765
+2 GetDatabaseURL=IDH_GetDatabaseURL_100769
+2 SetDatabaseURL=IDH_SetDatabaseURL_100766
+2 SetDatabaseURL=IDH_SetDatabaseURL_100770
+2 Alphabetical Routine Listing, By Unit
+3 DBISAMExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100765
+3 SetDatabaseURL=IDH_SetDatabaseURL_100766
+3 DBISAMOpenDatabase
+3 DecodeDatabaseURL=IDH_DecodeDatabaseURL_100767
+3 EncodeDatabaseURL=IDH_EncodeDatabaseURL_100768
+3 GetDatabaseURL=IDH_GetDatabaseURL_100769
+3 SetDatabaseURL=IDH_SetDatabaseURL_100770
+2 Alphabetical Data Type Listing
+2 TDatabaseOperationProgress=IDH_TDatabaseOperationProgress_100541
+2 Alphabetical Data Type Listing, By Unit
+3 DBISAMExt
+3 TDatabaseOperationProgress=IDH_TDatabaseOperationProgress_100541

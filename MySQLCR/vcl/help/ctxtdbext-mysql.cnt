@@ -1,0 +1,22 @@
+:Base ctxtdbext-mysql.hlp
+:Title  Context Database Extensions (MySQL)
+:Index Index for ctxtdbext-mysql.hlp=ctxtdbext-mysql.hlp
+1 Context Database Extensions (MySQL)
+2 About Context Database Extensions (MySQL)=IDH_Context Database Extensions (MySQL)_Project
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TMySQLDatabaseExt=IDH_TMySQLDatabaseExt
+2 TMySQLRangeCursor=IDH_TMySQLRangeCursor
+2 Alphabetical Object and Component Listing, By Unit
+3 MySQLExt
+3 TMySQLDatabaseExt=IDH_TMySQLDatabaseExt
+3 TMySQLRangeCursor=IDH_TMySQLRangeCursor
+2 Alphabetical Routine Listing
+2 GetDatabaseURL=IDH_GetDatabaseURL_100832
+2 SetDatabaseURL=IDH_SetDatabaseURL_100833
+2 Alphabetical Routine Listing, By Unit
+3 MySQLExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100832
+3 SetDatabaseURL=IDH_SetDatabaseURL_100833
+2 Alphabetical Data Type Listing, By Unit

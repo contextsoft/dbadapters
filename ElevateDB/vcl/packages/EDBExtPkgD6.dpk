@@ -1,0 +1,42 @@
+package EDBExtPkgD6;
+
+{$R *.res}
+{$R '..\source\EDBExtReg.dcr'}
+{$R '..\source\EDBOpenDatabase.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Context Database Extensions (Elevate DB)'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  designide,
+  vclx,
+  vcldb,
+  DbExtPkgD6;
+
+contains
+  EDBExtReg in '..\source\EDBExtReg.pas',
+  EDBExt in '..\source\EDBExt.pas',
+  EDBOpenDatabase in '..\source\EDBOpenDatabase.pas' {EDBOpenDatabase};
+
+end.

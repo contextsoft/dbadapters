@@ -1,0 +1,35 @@
+:Base ctxdbext-nx1.hlp
+:Title  Context Database Extensions (Nexus1)
+:Index Index for ctxdbext-nx1.hlp=ctxdbext-nx1.hlp
+1 Context Database Extensions (Nexus1)
+2 About Context Database Extensions (Nexus1)=IDH_Context Database Extensions (Nexus1)_Project
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TnxDatabaseExt=IDH_TnxDatabaseExt
+2 TnxOpenDatabase=IDH_TnxOpenDatabase
+2 TnxOpenDatabaseDialog=IDH_TnxOpenDatabaseDialog
+2 TnxQueryExt=IDH_TnxQueryExt
+2 TnxRangeCursor=IDH_TnxRangeCursor
+2 TnxTableExt=IDH_TnxTableExt
+2 Alphabetical Object and Component Listing, By Unit
+3 nxDBExt
+3 TnxDatabaseExt=IDH_TnxDatabaseExt
+3 TnxQueryExt=IDH_TnxQueryExt
+3 TnxRangeCursor=IDH_TnxRangeCursor
+3 TnxTableExt=IDH_TnxTableExt
+3 nxOpenDatabase
+3 TnxOpenDatabase=IDH_TnxOpenDatabase
+3 TnxOpenDatabaseDialog=IDH_TnxOpenDatabaseDialog
+2 Alphabetical Routine Listing
+2 GetDatabaseURL=IDH_GetDatabaseURL_100834
+2 SetDatabaseURL=IDH_SetDatabaseURL_100835
+2 Alphabetical Routine Listing, By Unit
+3 nxDBExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100834
+3 SetDatabaseURL=IDH_SetDatabaseURL_100835
+2 Alphabetical Data Type Listing
+2 TDatabaseOperationProgress=IDH_TDatabaseOperationProgress_100750
+2 Alphabetical Data Type Listing, By Unit
+3 nxDBExt
+3 TDatabaseOperationProgress=IDH_TDatabaseOperationProgress_100750

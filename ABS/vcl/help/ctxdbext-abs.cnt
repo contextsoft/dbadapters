@@ -1,0 +1,22 @@
+:Base ctxdbext-abs.hlp
+:Title  Context Database Extensions (Absolute Database)
+:Index Index for ctxdbext-abs.hlp=ctxdbext-abs.hlp
+1 Context Database Extensions (Absolute Database)
+2 About Context Database Extensions (Absolute Database)=IDH_Context Database Extensions (Absolute Database)_Project
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TABSDatabaseExt=IDH_TABSDatabaseExt
+2 TABSRangeCursor=IDH_TABSRangeCursor
+2 Alphabetical Object and Component Listing, By Unit
+3 ABSExt
+3 TABSDatabaseExt=IDH_TABSDatabaseExt
+3 TABSRangeCursor=IDH_TABSRangeCursor
+2 Alphabetical Routine Listing
+2 GetDatabaseURL=IDH_GetDatabaseURL_100828
+2 SetDatabaseURL=IDH_SetDatabaseURL_100829
+2 Alphabetical Routine Listing, By Unit
+3 ABSExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100828
+3 SetDatabaseURL=IDH_SetDatabaseURL_100829
+2 Alphabetical Data Type Listing, By Unit

@@ -1,0 +1,22 @@
+:Base ctxdbext-fibplus.hlp
+:Title  Context Database Extensions (FIBPlus)
+:Index Index for ctxdbext-fibplus.hlp=ctxdbext-fibplus.hlp
+1 Context Database Extensions (FIBPlus)
+2 About Context Database Extensions (FIBPlus)=IDH_Context Database Extensions (FIBPlus)_Project
+2 Packages
+3 Units
+2 Alphabetical Object and Component Listing
+2 TFIBDatabaseExt=IDH_TFIBDatabaseExt
+2 TFIBRangeCursor=IDH_TFIBRangeCursor
+2 Alphabetical Object and Component Listing, By Unit
+3 FIBExt
+3 TFIBDatabaseExt=IDH_TFIBDatabaseExt
+3 TFIBRangeCursor=IDH_TFIBRangeCursor
+2 Alphabetical Routine Listing
+2 GetDatabaseURL=IDH_GetDatabaseURL_100830
+2 SetDatabaseURL=IDH_SetDatabaseURL_100831
+2 Alphabetical Routine Listing, By Unit
+3 FIBExt
+3 GetDatabaseURL=IDH_GetDatabaseURL_100830
+3 SetDatabaseURL=IDH_SetDatabaseURL_100831
+2 Alphabetical Data Type Listing, By Unit
