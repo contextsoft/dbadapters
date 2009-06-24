@@ -19,7 +19,7 @@ uses
   FmtBcd,
 {$ENDIF}
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Db, nxdb, {nxsdTypes,} CtxDBIntf, dbSchema;
+  Db, nxdb, {nxsdTypes,} CtxDBIntf, dbSchema, CtxDataTypes, CtxDataSetCommand;
 
 type
   TnxDatabaseExt = class;
@@ -114,6 +114,7 @@ type
     { Parent object is always a table or schema. }
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
+    function CreateCommand: TCtxDataCommand;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -891,7 +892,7 @@ begin
           LastRel.DetailTableName := FieldByName('CTX_DETAIL_TABLE').AsString;
           LastRel.MasterTableName := FieldByName('CTX_MASTER_TABLE').AsString;
           LastRel.DetailRelationName := FieldByName('CTX_RELATIONSHIP').AsString;
-          LastRel.MasterRelationName := LastRel.MasterTableDef.Relations.GetAutoName('', LastRel.DetailTableName);
+          LastRel.MasterRelationName := LastRel.MasterTableDef.Relations.GetAutoName(LastRel, LastRel.DetailTableName);
           LastRel.UpdateAction := RelActionFromString(FieldByName('CTX_ON_UPDATE').AsString);
           LastRel.DeleteAction := RelActionFromString(FieldByName('CTX_ON_DELETE').AsString);
           LastRel.DetailKeyFields := FieldByName('CTX_DETAIL_FIELD_NAME').AsString;
@@ -1107,6 +1108,12 @@ begin
   FVersionStr := '';
   inherited Active := Value;
 end;
+
+function TnxDatabaseExt.CreateCommand: TCtxDataCommand;
+begin
+  Result := TCtxDataSetCommand.Create(Self);
+end;
+
 
 end.
 

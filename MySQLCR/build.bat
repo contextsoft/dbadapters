@@ -4,7 +4,7 @@ set buildto=..\
 set dcu=..\dcu
 set dpath=e:\Programs\Borland\Delphi7\Bin\dcc32.exe -Q
 set usepkg=-LUrtl;vcl;dbrtl
-set stdlib=e:\Programs\Borland\Delphi7\Lib;E:\projects\Context\DBExt\source;"..\..\vcl\source"
+set stdlib=e:\Programs\Borland\Delphi7\Lib;E:\projects\Context\DBExt\source;..\..\vcl\source
 
 cd adapter
 mkdir dcu
@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building MySQL adapter
 rem ==========================================================================
 
-set include=%stdlib%;"e:\programs\Borland\Delphi7\MyDac\Lib"
+set include=%stdlib%;E:\programs\DBEngines\CrMyDAC\d7\Lib\
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxMySQL.dpr
 

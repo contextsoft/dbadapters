@@ -17,7 +17,8 @@ uses
   FmtBcd,
 {$ENDIF}
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Db, CtxDBIntf, dbSchema, MyAccess;
+  Db, MyAccess,
+  CtxDataTypes, CtxDBIntf, dbSchema, CtxDataSetCommand;
 
 type
   TMySQLDatabaseExt = class;
@@ -106,6 +107,8 @@ type
     procedure GetTableNames(List: TStrings; SystemTables: Boolean = False);
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
+
+    function CreateCommand: TCtxDataCommand;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -567,6 +570,12 @@ procedure TMySQLDatabaseExt.GetTableNames(List: TStrings;
 begin
   inherited GetTableNames(List);
 end;
+
+function TMySQLDatabaseExt.CreateCommand: TCtxDataCommand;
+begin
+  Result := TCtxDataSetCommand.Create(Self);
+end;
+
 
 end.
 

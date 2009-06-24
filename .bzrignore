@@ -24,3 +24,4 @@ demos2
 demos2\**
 *.autosave
 Thumbs.db
+*.dll

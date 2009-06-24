@@ -105,15 +105,11 @@ HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
-[Language]
-ActiveLang=
-ProjectLang=$00000409
-RootDir=
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=0
 MajorVer=1
-MinorVer=0
+MinorVer=50
 Release=0
 Build=0
 Debug=0
@@ -121,5 +117,20 @@ PreRelease=0
 Special=0
 Private=0
 DLL=0
-Locale=1049
-CodePage=1251
+Locale=1033
+CodePage=1252
+[Version Info Keys]
+CompanyName=Michael Baytalsky
+FileDescription=Context Database Extensions Suite (DBISAM)
+FileVersion=1.50.0.0
+InternalName=DBISAMExt
+LegalCopyright=Copyright (c) 2004, Michael Baytalsky
+LegalTrademarks=
+OriginalFilename=DBISAMExtPkg.dpk
+ProductName=Context Database Extensions Suite (DBISAM)
+ProductVersion=1.50
+Comments=
+[Excluded Packages]
+c:\program files\borland\delphi7\Projects\Bpl\db329d7d.bpl=DBISAM Database System Design-Time Package
+c:\program files\borland\delphi7\Projects\Bpl\DBISAMExtPkgD7.bpl=Context Database Extensions (DBISAM 4)
+C:\Program Files\Borland\Delphi7\Projects\Bpl\NexusDB108dv70.bpl=NexusDB 1.08 - designtime - VCL70

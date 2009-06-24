@@ -17,7 +17,8 @@ uses
   FmtBcd,
 {$ENDIF}
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Db, EDBComps, CtxDBIntf, dbSchema;
+  Db, EDBComps, 
+  CtxDataTypes, CtxDBIntf, dbSchema, CtxDataSetCommand;
 
 type
   TEDBDatabaseExt = class;
@@ -111,6 +112,8 @@ type
     { Parent object is always a table or schema. }
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
+
+    function CreateCommand: TCtxDataCommand;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -647,6 +650,11 @@ procedure TEDBDatabaseExt.SetConnected(Value: Boolean);
 begin
   FVersionStr := '';
   Connected := Value;
+end;
+
+function TEDBDatabaseExt.CreateCommand: TCtxDataCommand;
+begin
+  Result := TCtxDataSetCommand.Create(Self);
 end;
 
 end.
