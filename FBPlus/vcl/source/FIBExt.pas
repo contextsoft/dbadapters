@@ -529,8 +529,8 @@ begin
     FreeQueryForUse(vQuery);
   end;
   // TpFIBDataSet(Query).Open;
-  // if TpFIBDataSet(Query).Transaction.InTransaction then
-    // TpFIBDataSet(Query).Transaction.CommitRetaining;
+  if TpFIBDataSet(Query).Transaction.InTransaction then
+    TpFIBDataSet(Query).Transaction.CommitRetaining;
   addLog('Exec SQL end', []);
 end;
 

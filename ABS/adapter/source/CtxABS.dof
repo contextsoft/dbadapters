@@ -94,7 +94,7 @@ OutputDir=
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=
+SearchPath=E:\projects\Context\Common\source\;E:\projects\Context\DBExt\source\;E:\projects\Context\DBAdapters\ABS\vcl\source\
 Packages=rtl;vcl;dbrtl
 Conditionals=
 DebugSourceDirs=
@@ -105,10 +105,6 @@ HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
-[Language]
-ActiveLang=
-ProjectLang=
-RootDir=E:\D7\Bin\
 [Version Info]
 IncludeVerInfo=0
 AutoIncBuild=0
@@ -134,3 +130,12 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+C:\Program Files\Borland\Delphi7\Projects\Bpl\NexusDB108dv70.bpl=NexusDB 1.08 - designtime - VCL70
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[HistoryLists\hlSearchPath]
+Count=2
+Item0=E:\projects\Context\Common\source\;E:\projects\Context\DBExt\source\;E:\projects\Context\DBAdapters\ABS\vcl\source\
+Item1=E:\projects\Context\Common\source\;E:\projects\Context\DBExt\source\

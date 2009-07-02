@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building EDB adapter
 rem ==========================================================================
 
-set include="%stdlib%;e:\Programs\DBEngines\ElevateDB\Delphi 7\code"
+set include="%stdlib%;e:\Programs\DBEngines\ElevateDB\Delphi7\code"
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxEDB.dpr 
 

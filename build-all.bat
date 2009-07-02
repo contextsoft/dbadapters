@@ -47,3 +47,7 @@ cd ..
 cd Nexus2
 call build.bat
 cd ..
+
+cd Nexus3
+call build.bat
+cd ..

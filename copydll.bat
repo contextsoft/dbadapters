@@ -12,3 +12,4 @@ copy IB\adapter\*.dll %dest%
 copy MySQLCR\adapter\*.dll %dest%
 copy Nexus1\adapter\*.dll %dest%
 copy Nexus2\adapter\*.dll %dest%
+copy Nexus3\adapter\*.dll %dest%

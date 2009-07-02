@@ -381,7 +381,7 @@ end;
 
 procedure TEDBDatabaseExt.StartTransaction;
 begin
-  inherited StartTransaction;
+  inherited StartTransaction(nil);
 end;
 
 procedure TEDBDatabaseExt.Commit;
