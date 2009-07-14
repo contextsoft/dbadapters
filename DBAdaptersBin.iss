@@ -3,7 +3,7 @@
 [Setup]
 AppName=Additional Database Extensions Adapters
 AppVerName=Additional Database Extensions Adapters v.3.02
-AppCopyright=Copyright © 2003-2009, Michael Baytalsky
+AppCopyright=Copyright © 2003-2009, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3\bin
 DefaultGroupName=Additional Database Extensions Adapters
 Compression=lzma/max
@@ -27,7 +27,7 @@ Name: "MySQL"; Description: "MySQL Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
 
 [Tasks]
-Name: RegAdapters; Description: "Register Database Adapters in DBDesigner";
+Name: RegAdapters; Description: "Register Adapters in the Context Database Designer";
 
 [Files]
 Source: "ABS\adapter\*.dll"; DestDir: "{app}"; Components: ABS

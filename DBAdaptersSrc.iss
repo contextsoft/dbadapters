@@ -3,7 +3,7 @@
 [Setup]
 AppName=Source Code for Additional Database Extensions Adapters
 AppVerName=Source Code for Additional Database Extensions Adapters v 3.02
-AppCopyright=Copyright © 2003-2009, Michael Baytalsky
+AppCopyright=Copyright © 2003-2009, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3
 DefaultGroupName=Source Code for Additional Database Extensions Adapters
 Compression=lzma/max
