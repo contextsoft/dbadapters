@@ -11,7 +11,7 @@ SolidCompression=true
 InternalCompressLevel=ultra
 SourceDir=.\
 OutputDir=-releases
-OutputBaseFilename=ctxdbadapterssrc$$$
+OutputBaseFilename=dbadapters-src-$$$
 
 [Types]
 Name: Default; Description: "Full installation"
@@ -27,11 +27,11 @@ Name: "MySQL"; Description: "MySQL Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
 
 [Files]
-Source: "ABS\*.*"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
-Source: "DBISAM3\*.*"; DestDir: "{app}\DBISAM3"; Flags: recursesubdirs; Components: DBISAM3
-Source: "DBISAM4\*.*"; DestDir: "{app}\DBISAM4"; Flags: recursesubdirs; Components: DBISAM4
-Source: "ElevateDB\*.*"; DestDir: "{app}\ElevateDB"; Flags: recursesubdirs; Components: EDB
-Source: "FBPlus\*.*"; DestDir: "{app}\FIBPlus"; Flags: recursesubdirs; Components: FBPlus
-Source: "MySQLCR\*.*"; DestDir: "{app}\MySQLCR"; Flags: recursesubdirs; Components: MySQL
-Source: "NEXUS3\*.*"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
+Source: "ABS\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
+Source: "DBISAM3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBISAM3"; Flags: recursesubdirs; Components: DBISAM3
+Source: "DBISAM4\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBISAM4"; Flags: recursesubdirs; Components: DBISAM4
+Source: "ElevateDB\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ElevateDB"; Flags: recursesubdirs; Components: EDB
+Source: "FBPlus\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\FIBPlus"; Flags: recursesubdirs; Components: FBPlus
+Source: "MySQLCR\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\MySQLCR"; Flags: recursesubdirs; Components: MySQL
+Source: "NEXUS3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
 

@@ -11,7 +11,7 @@ SolidCompression=true
 InternalCompressLevel=ultra
 SourceDir=.\
 OutputDir=-releases
-OutputBaseFilename=ctxdbadaptersbin$$$
+OutputBaseFilename=dbadapters-bin-$$$
 
 [Types]
 Name: Default; Description: "Full installation"
