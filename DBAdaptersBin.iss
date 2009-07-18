@@ -25,6 +25,7 @@ Name: "EDB"; Description: "Elevate DB Adapter"; Types: Default
 Name: "FBPlus"; Description: "FBPlus Adapter"; Types: Default
 Name: "MySQL"; Description: "MySQL Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
+Name: "DBX"; Description: "DBX Adapter"; Types: Default
 
 [Tasks]
 Name: RegAdapters; Description: "Register Adapters in the Context Database Designer";
@@ -37,6 +38,7 @@ Source: "ElevateDB\adapter\*.dll"; DestDir: "{app}"; Components: EDB
 Source: "FBPlus\adapter\*.dll"; DestDir: "{app}"; Components: FBPlus
 Source: "MySQLCR\adapter\*.dll"; DestDir: "{app}"; Components: MySQL
 Source: "NEXUS3\adapter\*.dll"; DestDir: "{app}"; Components: NEXUS3
+Source: "DBX\adapter\*.dll"; DestDir: "{app}"; Components: DBX
 
 [Registry]
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "ABS"; ValueData: "{app}\CtxABS.dll"; Flags: uninsdeletevalue; Components: ABS; Check: IsRegAdapter('ABS')
@@ -46,6 +48,7 @@ Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType:
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "FBPlus"; ValueData: "{app}\CtxIBFBYA.dll"; Flags: uninsdeletevalue; Components: FBPlus; Check: IsRegAdapter('FBPlus')
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "MySQL"; ValueData: "{app}\CtxMySQL.dll"; Flags: uninsdeletevalue; Components: MySQL; Check: IsRegAdapter('MySQL')
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "NEXUS3"; ValueData: "{app}\CtxNX3.dll"; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBX"; ValueData: "{app}\CtxDBX.dll"; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
 
 [Code]
 function IsRegAdapter(const CompName: String): Boolean;

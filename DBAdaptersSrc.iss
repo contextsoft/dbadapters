@@ -25,6 +25,7 @@ Name: "EDB"; Description: "Elevate DB Adapter"; Types: Default
 Name: "FBPlus"; Description: "FBPlus Adapter"; Types: Default
 Name: "MySQL"; Description: "MySQL Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
+Name: "DBX"; Description: "DBX Adapter"; Types: Default
 
 [Files]
 Source: "ABS\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
@@ -34,4 +35,5 @@ Source: "ElevateDB\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ElevateDB"; Fl
 Source: "FBPlus\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\FIBPlus"; Flags: recursesubdirs; Components: FBPlus
 Source: "MySQLCR\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\MySQLCR"; Flags: recursesubdirs; Components: MySQL
 Source: "NEXUS3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
+Source: "DBX\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
 
