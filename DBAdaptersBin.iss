@@ -41,14 +41,14 @@ Source: "NEXUS3\adapter\*.dll"; DestDir: "{app}"; Components: NEXUS3
 Source: "DBX\adapter\*.dll"; DestDir: "{app}"; Components: DBX
 
 [Registry]
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "ABS"; ValueData: "{app}\CtxABS.dll"; Flags: uninsdeletevalue; Components: ABS; Check: IsRegAdapter('ABS')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBISAM3"; ValueData: "{app}\CtxDBISAM3.dll"; Flags: uninsdeletevalue; Components: DBISAM3; Check: IsRegAdapter('DBISAM3')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBISAM4"; ValueData: "{app}\CtxDBISAM4.dll"; Flags: uninsdeletevalue; Components: DBISAM4; Check: IsRegAdapter('DBISAM4')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "EDB"; ValueData: "{app}\CtxEDB.dll"; Flags: uninsdeletevalue; Components: EDB; Check: IsRegAdapter('EDB')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "FBPlus"; ValueData: "{app}\CtxIBFBYA.dll"; Flags: uninsdeletevalue; Components: FBPlus; Check: IsRegAdapter('FBPlus')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "MySQL"; ValueData: "{app}\CtxMySQL.dll"; Flags: uninsdeletevalue; Components: MySQL; Check: IsRegAdapter('MySQL')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "NEXUS3"; ValueData: "{app}\CtxNX3.dll"; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
-Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBX"; ValueData: "{app}\CtxDBX.dll"; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "Absolute DB"; ValueData: "{app}\CtxABS.dll"; Flags: uninsdeletevalue; Components: ABS; Check: IsRegAdapter('ABS')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBISAM 3"; ValueData: "{app}\CtxDBISAM3.dll"; Flags: uninsdeletevalue; Components: DBISAM3; Check: IsRegAdapter('DBISAM3')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DBISAM 4"; ValueData: "{app}\CtxDBISAM4.dll"; Flags: uninsdeletevalue; Components: DBISAM4; Check: IsRegAdapter('DBISAM4')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "ElevateDB"; ValueData: "{app}\CtxEDB.dll"; Flags: uninsdeletevalue; Components: EDB; Check: IsRegAdapter('EDB')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "IB\FB\YA"; ValueData: "{app}\CtxIBFBYA.dll"; Flags: uninsdeletevalue; Components: FBPlus; Check: IsRegAdapter('FBPlus')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "MySQLDAC"; ValueData: "{app}\CtxMySQL.dll"; Flags: uninsdeletevalue; Components: MySQL; Check: IsRegAdapter('MySQL')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "NEXUS 3"; ValueData: "{app}\CtxNX3.dll"; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DB Express"; ValueData: "{app}\CtxDBX.dll"; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
 
 [Code]
 function IsRegAdapter(const CompName: String): Boolean;
