@@ -16,7 +16,7 @@ rem ==========================================================================
 
 set include=%stdlib%;E:\programs\DBEngines\NexusDB2\Delphi7
 
-%dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX2.dpr 
+%dpath% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX2.dpr 
 
 echo Done.
 
