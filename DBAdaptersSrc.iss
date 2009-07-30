@@ -2,7 +2,7 @@
 
 [Setup]
 AppName=Source Code for Additional Database Extensions Adapters
-AppVerName=Source Code for Additional Database Extensions Adapters v 3.03
+AppVerName=Source Code for Additional Database Extensions Adapters v 3.04
 AppCopyright=Copyright © 2003-2009, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3
 DefaultGroupName=Source Code for Additional Database Extensions Adapters
@@ -28,6 +28,7 @@ Name: "NEXUS1"; Description: "Nexus 1 Adapter"; Types: Default
 Name: "NEXUS2"; Description: "Nexus 2 Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
 Name: "DBX"; Description: "DBX Adapter"; Types: Default
+Name: "AnyDAC"; Description: "AnyDAC Adapter"; Types: Default
 
 [Files]
 Source: "ABS\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
@@ -40,4 +41,5 @@ Source: "NEXUS1\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS1"; Flags: r
 Source: "NEXUS2\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS2"; Flags: recursesubdirs; Components: NEXUS2
 Source: "NEXUS3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
 Source: "DBX\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
+Source: "AnyDAC\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\AnyDAC"; Flags: recursesubdirs; Components: AnyDAC
 

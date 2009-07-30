@@ -8,6 +8,10 @@ cd ADO
 call build.bat
 cd ..
 
+cd AnyDAC
+call build.bat
+cd ..
+
 cd BDE
 call build.bat
 cd ..
