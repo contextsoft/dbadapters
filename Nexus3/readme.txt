@@ -3,7 +3,7 @@ Context Database Extensions - Nexus 3 Adapter
 Copyright (c) 2009, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.02
+Version: 3.04
 
 
   This package contains freeware add-ons to Context
