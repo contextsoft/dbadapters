@@ -81,6 +81,7 @@ var
   Database: TEDBDatabaseExt;
   Session: TEDBSession;
   ParamList: TStringList;
+  ConfigFile: String;
 begin
   Session := TEDBSession.Create(nil);
   Database := TEDBDatabaseExt.Create(nil);
@@ -92,6 +93,12 @@ begin
       ParamList.CommaText := Params;
       Session.LoginUser := ParamList.Values['User Name'];
       Session.LoginPassword := ParamList.Values['Password'];
+      ConfigFile := ParamList.Values['Config File'];     
+      if ConfigFile <> '' then
+      begin
+        Session.LocalConfigPath :=  ExtractFilePath(ConfigFile);
+        Session.LocalConfigName :=  ExtractFileName(ConfigFile);
+      end;
     finally
       ParamList.Free;
     end;
@@ -133,7 +140,10 @@ end;
 function TCtxEDBAdapter.GetParamNames(var Params: OleVariant): Integer;
 begin
   Result := 0;
-  Params := '"User Name=","Password="';
+  Params := '"User Name=","Password=","Config File="';
 end;
 
+
+initialization
+  Engine.ConfigPath := ExtractFilePath(ParamStr(0));
 end.

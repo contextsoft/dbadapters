@@ -16,7 +16,7 @@ rem ==========================================================================
 
 set include=%stdlib%;E:\programs\DBEngines\NexusDB3\Delphi7
 
-%dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX3.dpr 
+%dpath% %usepkg% -DNX_REMOTESERVER -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX3.dpr 
 
 echo Done.
 
