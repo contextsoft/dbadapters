@@ -81,7 +81,7 @@ begin
     Database.Params.CommaText := Params;
     Database.DatabaseName := DatabaseName;
     Database.DatabaseURL := ConnectionStr;
-    Database.KeepConnection := False;
+    //Database.KeepConnection := False;
     try
       Database.Connected := True;
     except
