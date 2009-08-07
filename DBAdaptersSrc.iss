@@ -31,15 +31,15 @@ Name: "DBX"; Description: "DBX Adapter"; Types: Default
 Name: "AnyDAC"; Description: "AnyDAC Adapter"; Types: Default
 
 [Files]
-Source: "ABS\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
-Source: "DBISAM3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBISAM3"; Flags: recursesubdirs; Components: DBISAM3
-Source: "DBISAM4\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBISAM4"; Flags: recursesubdirs; Components: DBISAM4
-Source: "ElevateDB\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\ElevateDB"; Flags: recursesubdirs; Components: EDB
-Source: "FBPlus\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\FIBPlus"; Flags: recursesubdirs; Components: FBPlus
-Source: "MySQLCR\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\MySQLCR"; Flags: recursesubdirs; Components: MySQL
-Source: "NEXUS1\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS1"; Flags: recursesubdirs; Components: NEXUS1
-Source: "NEXUS2\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS2"; Flags: recursesubdirs; Components: NEXUS2
-Source: "NEXUS3\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
-Source: "DBX\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
-Source: "AnyDAC\*.*"; Excludes: "*.dll,*.dcu"; DestDir: "{app}\AnyDAC"; Flags: recursesubdirs; Components: AnyDAC
+Source: "ABS\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
+Source: "DBISAM3\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\DBISAM3"; Flags: recursesubdirs; Components: DBISAM3
+Source: "DBISAM4\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\DBISAM4"; Flags: recursesubdirs; Components: DBISAM4
+Source: "ElevateDB\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\ElevateDB"; Flags: recursesubdirs; Components: EDB
+Source: "FBPlus\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\FIBPlus"; Flags: recursesubdirs; Components: FBPlus
+Source: "MySQLCR\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\MySQLCR"; Flags: recursesubdirs; Components: MySQL
+Source: "NEXUS1\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS1"; Flags: recursesubdirs; Components: NEXUS1
+Source: "NEXUS2\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS2"; Flags: recursesubdirs; Components: NEXUS2
+Source: "NEXUS3\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
+Source: "DBX\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
+Source: "AnyDAC\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\AnyDAC"; Flags: recursesubdirs; Components: AnyDAC
 
