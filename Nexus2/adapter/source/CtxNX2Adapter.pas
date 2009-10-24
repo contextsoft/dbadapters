@@ -2,7 +2,7 @@ unit CtxNX2Adapter;
 
 interface
 
-uses Classes, SysUtils, Variants, Contnrs, DB, nxDBExt, dbSchema, nxsrSqlEngineBase,
+uses Classes, SysUtils, Variants, Contnrs, DB, nxDBExt, dbSchema, nxsdServerEngine, nxsrSqlEngineBase,
   nxDB, nxsrServerEngine, nxsqlEngine, CtxDBDesignerAdapter, dmMain;
 
 type
@@ -27,10 +27,11 @@ type
 
 implementation
 
-uses nxOpenDatabase, dbExtUtils;
+uses nxOpenDatabase, dbExtUtils, forms;
 
 resourcestring
   SOperationNotSupported = 'Selected operation is not supported by %s adapter';
+  SErrorOpenDatabase = 'Unable to open connection to database: %s '+#13#10+ 'Error: %s';
 
 procedure GetCtxDBAdapters(var Adapters: OleVariant);
 begin
@@ -57,23 +58,74 @@ end;
 procedure TCtxNX2Adapter.CloseDatabase(DatabaseID: Integer);
 var
   Idx: Integer;
+  Eng: TnxBaseServerEngine;
 begin
   Idx := FDatabases.IndexOf(TObject(DatabaseID));
   if Idx >= 0 then
   begin
+    if TnxDatabaseExt(DatabaseID).InTransaction then
+      TnxDatabaseExt(DatabaseID).Rollback;
     TnxDatabaseExt(DatabaseID).Connected := False;
     TnxDatabaseExt(DatabaseID).Session.Active := False;
+    Eng := TnxDatabaseExt(DatabaseID).Session.ServerEngine;
+    if (Eng <> nil) and (Eng.SessionCount = 0) then
+      Eng.Active := False;
     TnxDatabaseExt(DatabaseID).Session.Free;
     TnxDatabaseExt(DatabaseID).Free;
     FDatabases.Delete(Idx);
   end;
 end;
+{
+    TnxDatabaseExt(DatabaseID).Connected := False;
+    TnxDatabaseExt(DatabaseID).Session.Active := False;
+    TnxDatabaseExt(DatabaseID).Session.Free;
+    TnxDatabaseExt(DatabaseID).Free;
+    FDatabases.Delete(Idx);
+}
 
-function TCtxNX2Adapter.ExecuteVerb(DatabaseID, Verb: Integer;
-  var Data: OleVariant): Integer;
+function TCtxNX2Adapter.ExecuteVerb(DatabaseID, Verb: Integer; var Data: OleVariant): Integer;
+var
+  Idx: Integer;
+  ResultSet: TDataSet;
+begin
+  Idx := FDatabases.IndexOf(TObject(DatabaseID));
+  Result := 0;
+  if (Idx < 0) or (DatabaseID = 0) then
+    Result := -1
+  else with TnxDatabaseExt(DatabaseID) do
+  begin
+    case Verb of
+      // dvCreateDatabase:; not used currently
+      dvReverseEngineer: begin
+        ReverseEngineer;
+        Data := StrToVarArray(Schema.SaveToStr);
+      end;
+      dvGetVersion: Data := VersionToStr(GetVersion);
+      dvSetVersion: SetVersion(StrToVersion(Data));
+      dvExecuteSQL: begin
+        ResultSet := nil;
+        try
+          ExecuteStatement(VarToStr(Data), @ResultSet);
+          if (ResultSet <> nil) and (ResultSet.FieldCount > 0) then
+            Data := DataSetToVariant(ResultSet);
+        finally
+          FreeAndNil(ResultSet);
+        end;
+      end;
+      else begin
+        Result := -1;
+      end;
+    end;
+  end;
+  if Result <> 0 then
+    Data := Format(SOperationNotSupported, [GetDriverName]);
+end;
+
+{
 begin
   Result := ExecuteVerbExt(FDatabases, DatabaseID, Verb, Data);
 end;
+}
 
 function TCtxNX2Adapter.GetDriverName: OleVariant;
 begin
@@ -109,9 +161,14 @@ begin
     // FSessions.Add(Session);
     Result := Integer(Database);
   except
-    Session.Free;
-    Database.Free;
-    raise;
+    on E: Exception do
+    begin
+      Result := 0;
+      Session.Free;
+      Database.Free;
+      E.Message := Format(SErrorOpenDatabase, [DatabaseName, E.Message]);
+      Application.HandleException(E);
+    end;
   end;
 end;
 
