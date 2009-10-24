@@ -45,6 +45,7 @@ Source: "NEXUS2\adapter\*.dll"; DestDir: "{app}"; Components: NEXUS2
 Source: "NEXUS3\adapter\*.dll"; DestDir: "{app}"; Components: NEXUS3
 Source: "DBX\adapter\*.dll"; DestDir: "{app}"; Components: DBX
 Source: "AnyDAC\adapter\*.dll"; DestDir: "{app}"; Components: AnyDAC
+Source: "SQLite\adapter\*.dll"; DestDir: "{app}"; Components: SQLite
 
 [Registry]
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "Absolute DB"; ValueData: "{app}\CtxABS.dll"; Flags: uninsdeletevalue; Components: ABS; Check: IsRegAdapter('ABS')
@@ -58,6 +59,7 @@ Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType:
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "NEXUS 3"; ValueData: "{app}\CtxNX3.dll"; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "DB Express"; ValueData: "{app}\CtxDBX.dll"; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
 Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "AnyDAC"; ValueData: "{app}\CtxAnyDAC.dll"; Flags: uninsdeletevalue; Components: AnyDAC; Check: IsRegAdapter('AnyDAC')
+Root: HKCU; Subkey: "Software\Context Software\DBDesigner3\Adapters"; ValueType: string; ValueName: "AnyDAC"; ValueData: "{app}\CtxAnyDAC.dll"; Flags: uninsdeletevalue; Components: AnyDAC; Check: IsRegAdapter('SQLite')
 
 [Code]
 function IsRegAdapter(const CompName: String): Boolean;

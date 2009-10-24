@@ -55,3 +55,7 @@ cd ..
 cd Nexus3
 call build.bat
 cd ..
+
+cd SQLite
+call build.bat
+cd ..

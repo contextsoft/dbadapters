@@ -11,12 +11,12 @@ mkdir dcu
 cd source
 
 rem ==========================================================================
-echo Building Nexus 3 adapter
+echo Building SQLite adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\NexusDB3\Delphi7
+set include=%stdlib%;E:\programs\DBEngines\ASQLite
 
-%dpath% %usepkg% -DNX_REMOTESERVER -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX3.dpr 
+%dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxSQLite.dpr
 
 echo Done.
 

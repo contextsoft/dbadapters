@@ -29,6 +29,7 @@ Name: "NEXUS2"; Description: "Nexus 2 Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
 Name: "DBX"; Description: "DBX Adapter"; Types: Default
 Name: "AnyDAC"; Description: "AnyDAC Adapter"; Types: Default
+Name: "SQLite"; Description: "SQLite Adapter"; Types: Default
 
 [Files]
 Source: "ABS\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\ABS"; Flags: recursesubdirs; Components: ABS
@@ -42,4 +43,5 @@ Source: "NEXUS2\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS2"; Fl
 Source: "NEXUS3\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
 Source: "DBX\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
 Source: "AnyDAC\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\AnyDAC"; Flags: recursesubdirs; Components: AnyDAC
+Source: "SQLite\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\SQLite"; Flags: recursesubdirs; Components: SQLite
 
