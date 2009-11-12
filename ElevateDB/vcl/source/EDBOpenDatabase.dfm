@@ -70,7 +70,6 @@ object EDBOpenDatabase: TEDBOpenDatabase
       Width = 92
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 2
       Items.Strings = (
         'LAN'
@@ -87,7 +86,7 @@ object EDBOpenDatabase: TEDBOpenDatabase
     object lblServer: TLabel
       Left = 18
       Top = 23
-      Width = 34
+      Width = 36
       Height = 13
       Caption = 'Server:'
     end
@@ -98,7 +97,6 @@ object EDBOpenDatabase: TEDBOpenDatabase
       Width = 278
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 1
       OnChange = cbxAvailableDatabasesChange
       OnDropDown = cbxServerChange
@@ -118,7 +116,6 @@ object EDBOpenDatabase: TEDBOpenDatabase
       Top = 19
       Width = 234
       Height = 21
-      ItemHeight = 13
       TabOrder = 0
       OnExit = cbxServerChange
     end

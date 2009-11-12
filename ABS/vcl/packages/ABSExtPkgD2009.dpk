@@ -29,8 +29,7 @@ requires
   vcl,
   designide,
   vclx,
-  vcldb,
-  DbExtPkgD2009;
+  vcldb;
 
 contains
   ABSExt in '..\source\ABSExt.pas';
