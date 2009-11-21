@@ -584,11 +584,11 @@ begin
           with Table.AdvFieldDefs[J] do
           begin
             if not MinValue.IsNull then
-              FldDef.SetPropValue('Min', MinValue.AsAnsiString);
+              FldDef.SetPropValue('Min', String(MinValue.AsAnsiString));
             if not MaxValue.IsNull then
-              FldDef.SetPropValue('Max', MaxValue.AsAnsiString);
+              FldDef.SetPropValue('Max', String(MaxValue.AsAnsiString));
             if not DefaultValue.IsNull then
-              FldDef.DefaultExpression := DefaultValue.AsAnsiString;
+              FldDef.DefaultExpression := String(DefaultValue.AsAnsiString);
 
             case DataType of
               aftAutoIncShortint:
