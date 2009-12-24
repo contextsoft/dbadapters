@@ -9,6 +9,8 @@
 (******************************************************************************)
 unit DBISAMExt;
 
+{$I CtxVer.inc}
+
 interface
 
 uses
@@ -20,6 +22,10 @@ uses
   Db, DBISAMTb, dbExtParser, CtxDataTypes, dbExtUtils, CtxDBIntf, dbSchema, CtxDataSetCommand;
 
 {$I DBISAMVR.INC}
+
+{$IFnDEF D2009_ORLATER}
+  TRecordBuffer = PChar;
+{$ENDIF}
 
 type
   TDBISAMDatabaseExt = class;
@@ -420,7 +426,7 @@ type
     FUpdateOptions: TUpdateOptions;
 
     procedure CheckActive; override;
-    procedure CalculateFields(Buffer: PChar); override;
+    procedure CalculateFields(Buffer: TRecordBuffer); override;
 
     procedure DoAfterOpen; override;
     procedure DoBeforeClose; override;
@@ -500,8 +506,7 @@ type
 
     procedure SetAllowMacros(const Value: Boolean);
     procedure CheckActive; override;
-    procedure CalculateFields(Buffer: PChar); override;
-
+    procedure CalculateFields(Buffer: TRecordBuffer); override;
     procedure DoBeforeOpen; override;
     procedure DoAfterOpen; override;
     procedure DoBeforeClose; override;
@@ -1983,7 +1988,7 @@ begin
   end;
 end;
 
-procedure TDBISAMTableExt.CalculateFields(Buffer: PChar);
+procedure TDBISAMTableExt.CalculateFields(Buffer: TRecordBuffer);
 begin
   if OptimizedLookups and (State <> dsInternalCalc) then
   begin
@@ -2211,7 +2216,7 @@ begin
   FSQLPattern.Free;
 end;
 
-procedure TDBISAMQueryExt.CalculateFields(Buffer: PChar);
+procedure TDBISAMQueryExt.CalculateFields(Buffer: TRecordBuffer);
 begin
   if OptimizedLookups and (State <> dsInternalCalc) then
   begin

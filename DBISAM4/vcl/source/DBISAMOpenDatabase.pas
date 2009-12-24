@@ -166,7 +166,7 @@ begin
    if SHGetPathFromIDList(ItemIDList,@Buffer) then
       begin
       Result:=True;
-      DirectoryStr:=StrPas(@Buffer);
+      DirectoryStr:=StrPas(PChar(@Buffer));
       end;
 end;
 
