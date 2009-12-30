@@ -897,8 +897,11 @@ end;
 
 procedure TDBISAMDatabaseExt.ClearTableCache;
 begin
-  FreeObjects(FCachedTables);
-  FCachedTables.Count := 0;
+  if FCachedTables <> nil then
+  begin
+    FreeObjects(FCachedTables);
+    FCachedTables.Count := 0;
+  end;
 end;
 
 procedure TDBISAMDatabaseExt.RemoveFromCache(DataSet: TDataSet);
