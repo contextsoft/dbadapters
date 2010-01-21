@@ -621,6 +621,7 @@ const
   ctLAN = 'LAN';
   ctInternet = 'Internet';
   INTERNET_COMPRESSION = 6;
+  defSysTableName = 'System';
 
 const
   idxByReplicationID = 'byReplicationID';
@@ -1136,8 +1137,25 @@ begin
 end;
 
 function TDBISAMDatabaseExt.CheckSystemTable(CreateIfNotExist: Boolean = False): Boolean;
+var
+  STable: string;
 begin
   CheckActive;
+
+  if Self.GetSchema <> nil then
+    STable := Self.GetSchema.SystemTableName else
+    STable := FSystemTableName;
+
+  if Trim(STable) = '' then
+    STable := defSysTableName;  
+
+  if not AnsiSameText(FSystemTableName, STable) and (STable <> '') then
+  begin
+    if SystemTable <> nil then
+      DestroySystemTable;
+    FSystemTableName := STable;
+  end;
+
   // Make sure, that system table exists. Open or create it and map fields
   if SystemTable = nil then
   begin

@@ -23,11 +23,12 @@ uses
 
 {$I DBISAMVR.INC}
 
+type
 {$IFnDEF D2009_ORLATER}
   TRecordBuffer = PChar;
 {$ENDIF}
 
-type
+
   TDBISAMDatabaseExt = class;
   TDBISAMTableExt = class;
   TDBISAMQueryExt = class;
@@ -623,6 +624,7 @@ const
   ctInternet = 'Internet';
   INTERNET_COMPRESSION = 6;
   DEFAULT_PORT = 12005;
+  defSysTableName = 'System';
 
 const
   idxByReplicationID = 'byReplicationID';
@@ -788,7 +790,7 @@ constructor TDBISAMDatabaseExt.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FSchema := nil;
-  FSystemTableName := 'System';
+  FSystemTableName := defSysTableName;
   FObjectsTableName := 'Objects';
   FSystemTable := nil;
   FObjectsTable := nil;
@@ -1150,8 +1152,22 @@ begin
 end;
 
 function TDBISAMDatabaseExt.CheckSystemTable(CreateIfNotExist: Boolean = False): Boolean;
+var
+  STable: string;
 begin
   CheckActive;
+  if Self.GetSchema <> nil then
+    STable := Self.GetSchema.SystemTableName else
+    STable := FSystemTableName;
+  if Trim(STable) = '' then
+    STable := defSysTableName;  
+  if not AnsiSameText(FSystemTableName, STable) and (STable <> '') then
+  begin
+    if SystemTable <> nil then
+      DestroySystemTable;
+    FSystemTableName := STable;
+  end;
+
   // Make sure, that system table exists. Open or create it and map fields
   if SystemTable = nil then
   begin
