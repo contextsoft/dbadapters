@@ -174,6 +174,9 @@ implementation
 
 uses Math;
 
+const
+  defSysTableName = 'SysTable';
+
 procedure Register;
 begin
   RegisterComponents('Database Extensions', [TABSDatabaseExt]);
@@ -268,7 +271,7 @@ constructor TABSDatabaseExt.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FSchema := nil;
-  FSystemTableName := 'SysTable';
+  FSystemTableName := defSysTableName;
   FVersionStr := '';
 end;
 
@@ -553,9 +556,20 @@ var
   LogicalTableName: String;
   FldDef: TFieldDefinition;
   IdxDef: TIndexDefinition;
+  STable: string;
 begin
   CheckActive;
   CheckSchema;
+
+
+  if Self.GetSchema <> nil then
+    STable := Self.GetSchema.SystemTableName else
+    STable := FSystemTableName;
+
+  if Trim(STable) = '' then
+    STable := defSysTableName;  
+
+
   // Update schema from the physical tables
   Table := CreateTable('') as TABSTable;
   Tables := TStringList.Create;
@@ -567,7 +581,7 @@ begin
     for I := 0 to Tables.Count - 1 do
     begin
       LogicalTableName := Tables[I];
-      if AnsiCompareText(LogicalTableName, FSystemTableName) = 0 then continue;
+      if AnsiCompareText(LogicalTableName, STable) = 0 then continue;
 
       Table.TableName := Tables[I];
       Table.FieldDefs.Update;

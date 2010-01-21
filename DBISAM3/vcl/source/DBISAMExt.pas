@@ -1560,10 +1560,21 @@ var
   Tables: TStringList;
   LogicalTableName: String;
   FldDef: TFieldDefinition;
+  STable: string;
   // IdxDef: TIndex
+
 begin
   CheckActive;
   CheckSchema;
+
+  if Self.GetSchema <> nil then
+    STable := Self.GetSchema.SystemTableName else
+    STable := FSystemTableName;
+
+  if Trim(STable) = '' then
+    STable := defSysTableName;  
+
+
   // Update schema from the physical tables
   Table := OpenTable('');
   Tables := TStringList.Create;
@@ -1575,7 +1586,7 @@ begin
     for I := 0 to Tables.Count - 1 do
     begin
       LogicalTableName := ChangeFileExt(Tables[I], '');
-      if (AnsiCompareText(LogicalTableName, FSystemTableName) = 0)
+      if (AnsiCompareText(LogicalTableName, STable) = 0)
         or (AnsiCompareText(LogicalTableName, FObjectsTableName) = 0)
       then continue;
 
