@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building Nexus 3 adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\NexusDB3\Delphi7
+set include=%stdlib%;e:\projects\sdk\db\NexusDB3\Delphi7
 
 %dpath% %usepkg% -DNX_REMOTESERVER -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX3.dpr 
 

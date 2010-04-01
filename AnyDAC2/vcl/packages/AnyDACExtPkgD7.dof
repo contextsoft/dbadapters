@@ -10,7 +10,7 @@ F=0
 G=1
 H=1
 I=1
-J=0
+J=1
 K=0
 L=1
 M=0
@@ -76,9 +76,9 @@ LocaleToUnicode=1
 ImagebaseMultiple=1
 SuspiciousTypecast=1
 PrivatePropAccessor=1
-UnsafeType=1
-UnsafeCode=1
-UnsafeCast=1
+UnsafeType=0
+UnsafeCode=0
+UnsafeCast=0
 [Linker]
 MapFile=0
 OutputObjs=0
@@ -88,7 +88,7 @@ RemoteSymbols=0
 MinStackSize=16384
 MaxStackSize=1048576
 ImageBase=4194304
-ExeDescription=Context Database Extensions (FIBPlus)
+ExeDescription=Context Database Extensions (AnyDAC)
 [Directories]
 OutputDir=
 UnitOutputDir=
@@ -96,7 +96,7 @@ PackageDLLOutputDir=
 PackageDCPOutputDir=
 SearchPath=
 Packages=
-Conditionals=
+Conditionals=CTXDBEXT30
 DebugSourceDirs=
 UsePackages=0
 [Parameters]
@@ -105,10 +105,6 @@ HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
-[Language]
-ActiveLang=
-ProjectLang=
-RootDir=
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=0
@@ -134,8 +130,3 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
-[Excluded Packages]
-C:\DBEngines\ABS\Lib\Delphi 7\dclAbsDbd7.bpl=Absolute Database - Design package
-C:\Program Files\Borland\Delphi7\Projects\Bpl\NexusDB108dv70.bpl=NexusDB 1.08 - designtime - VCL70
-c:\program files\borland\delphi7\Projects\Bpl\DBISAMExtPkgD7.bpl=Context Database Extensions (DBISAM 3)
-c:\program files\borland\delphi7\Projects\Bpl\EDBExtPkgD7.bpl=Context Database Extensions (Elevate DB)

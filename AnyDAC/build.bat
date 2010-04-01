@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building AnyDAC adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\AnyDAC\Dcu\D7
+set include=%stdlib%;e:\projects\sdk\db\AnyDAC\Dcu\D7
 
 %dpath% %usepkg% -DCTXDBEXT30 -N%dcu% -E%buildto% -I%include% -U%include% -B CtxAnyDAC.dpr
 

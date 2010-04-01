@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building dbisam 3 adapter
 rem ==========================================================================
 
-set include=%stdlib%;"e:\Programs\DBEngines\dbisam3\d700\code"
+set include=%stdlib%;"e:\projects\sdk\db\dbisam3\d7\code"
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxDBISAM3.dpr
 

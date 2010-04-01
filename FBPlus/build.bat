@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building IB\FB\YA adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\projects\sdk\FIBPlus\sources
+set include=%stdlib%;e:\projects\sdk\db\FIBPlus\sources
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxIBFBYA.dpr
 

@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building Nexus 2 adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\NexusDB2\Delphi7
+set include=%stdlib%;e:\projects\sdk\db\NexusDB2\Delphi7
 
 %dpath% -DNX_REMOTESERVER -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX2.dpr 
 

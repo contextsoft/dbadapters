@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building Nexus 1 adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\NexusDB1\Delphi7
+set include=%stdlib%;e:\projects\sdk\db\NexusDB1\Delphi7
 
 %dpath% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxNX1.dpr 
 

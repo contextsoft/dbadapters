@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building SQLite adapter
 rem ==========================================================================
 
-set include=%stdlib%;E:\programs\DBEngines\ASQLite
+set include=%stdlib%;e:\projects\sdk\db\ASQLite
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxSQLite.dpr
 

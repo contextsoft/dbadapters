@@ -14,7 +14,7 @@ rem ==========================================================================
 echo Building Absolute Database adapter
 rem ==========================================================================
 
-set include=%stdlib%;"e:\Programs\DBEngines\ABS\Lib\Delphi 7"
+set include=%stdlib%;"e:\projects\sdk\db\ABS\Lib\Delphi 7"
 
 %dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxABS.dpr
 
