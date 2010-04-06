@@ -24,6 +24,7 @@ uses
 {$I DBISAMVR.INC}
 
 type
+
 {$IFnDEF D2009_ORLATER}
   TRecordBuffer = PChar;
 {$ENDIF}
