@@ -3,7 +3,7 @@
 [Setup]
 AppName=Source Code for Additional Database Extensions Adapters
 AppVerName=Source Code for Additional Database Extensions Adapters v 3.14
-AppCopyright=Copyright © 2003-2009, Context Software LLC.
+AppCopyright=Copyright © 2003-2010, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3
 DefaultGroupName=Source Code for Additional Database Extensions Adapters
 Compression=lzma/max
@@ -29,6 +29,7 @@ Name: "NEXUS2"; Description: "Nexus 2 Adapter"; Types: Default
 Name: "NEXUS3"; Description: "Nexus 3 Adapter"; Types: Default
 Name: "DBX"; Description: "DBX Adapter"; Types: Default
 Name: "AnyDAC"; Description: "AnyDAC Adapter"; Types: Default
+Name: "AnyDAC2"; Description: "AnyDAC2 Adapter"; Types: Default
 Name: "SQLite"; Description: "SQLite Adapter"; Types: Default
 
 [Files]
@@ -43,5 +44,6 @@ Source: "NEXUS2\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS2"; Fl
 Source: "NEXUS3\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\NEXUS3"; Flags: recursesubdirs; Components: NEXUS3
 Source: "DBX\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\DBX"; Flags: recursesubdirs; Components: DBX
 Source: "AnyDAC\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\AnyDAC"; Flags: recursesubdirs; Components: AnyDAC
+Source: "AnyDAC2\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\AnyDAC2"; Flags: recursesubdirs; Components: AnyDAC2
 Source: "SQLite\*.*"; Excludes: "*.bat,*.dll,*.dcu"; DestDir: "{app}\SQLite"; Flags: recursesubdirs; Components: SQLite
 

@@ -3,7 +3,7 @@
 [Setup]
 AppName=Additional Database Extensions Adapters
 AppVerName=Additional Database Extensions Adapters v.3.14
-AppCopyright=Copyright © 2003-2009, Context Software LLC.
+AppCopyright=Copyright © 2003-2010, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3\bin
 DefaultGroupName=Additional Database Extensions Adapters
 Compression=lzma/max
@@ -29,6 +29,7 @@ Name: NEXUS2; Description: Nexus 2 Adapter; Types: Default
 Name: NEXUS3; Description: Nexus 3 Adapter; Types: Default
 Name: DBX; Description: DBX Adapter; Types: Default
 Name: AnyDAC; Description: AnyDAC Adapter; Types: Default
+Name: AnyDAC2; Description: AnyDAC2 Adapter; Types: Default
 Name: SQLite; Description: SQLite Adapter; Types: Default
 
 [Tasks]
@@ -46,6 +47,7 @@ Source: NEXUS2\adapter\*.dll; DestDir: {app}; Components: NEXUS2
 Source: NEXUS3\adapter\*.dll; DestDir: {app}; Components: NEXUS3
 Source: DBX\adapter\*.dll; DestDir: {app}; Components: DBX
 Source: AnyDAC\adapter\*.dll; DestDir: {app}; Components: AnyDAC
+Source: AnyDAC2\adapter\*.dll; DestDir: {app}; Components: AnyDAC2
 Source: SQLite\adapter\*.dll; DestDir: {app}; Components: SQLite
 
 [Registry]
@@ -60,6 +62,7 @@ Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: s
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: NEXUS 3; ValueData: {app}\CtxNX3.dll; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: DB Express; ValueData: {app}\CtxDBX.dll; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxAnyDAC.dll; Flags: uninsdeletevalue; Components: AnyDAC; Check: IsRegAdapter('AnyDAC')
+Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxAnyDAC2.dll; Flags: uninsdeletevalue; Components: AnyDAC2; Check: IsRegAdapter('AnyDAC2')
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxSQLite.dll; Flags: uninsdeletevalue; Components: SQLite; Check: IsRegAdapter('SQLite')
 
 [Code]

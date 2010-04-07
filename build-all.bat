@@ -12,6 +12,10 @@ cd AnyDAC
 call build.bat
 cd ..
 
+cd AnyDAC2
+call build.bat
+cd ..
+
 cd BDE
 call build.bat
 cd ..
