@@ -26,7 +26,7 @@ uses
 {$ENDIF}
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Db, uADCompClient, uADPhysIntf,
-  {$IFDEF CTXDBEXT30}CtxDataTypes, CtxDataSetCommand, {$ENDIF}
+  CtxDataTypes, CtxDataSetCommand, 
   CtxDBIntf, dbSchema;
 
 type
@@ -112,9 +112,7 @@ type
     procedure ExecSQL(Query: TDataSet);
     function ExecuteStatement(SQL: String; ResultSet: Pointer): Integer;
 
-    {$IFDEF CTXDBEXT30}
     function CreateCommand: TCtxDataCommand;
-    {$ENDIF}
 
     { Parent object is always a table or schema. }
     procedure GetTableNames(List: TStrings; SystemTables: Boolean = False);
@@ -556,12 +554,10 @@ begin
   inherited GetTableNames('', '', '', List, eScopes, [tkTable]);
 end;
 
-{$IFDEF CTXDBEXT30}
 function TADConnectionExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
-{$ENDIF}
 
 end.
 

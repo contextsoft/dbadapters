@@ -16,7 +16,7 @@ rem ==========================================================================
 
 set include=%stdlib%;e:\projects\sdk\db\AnyDAC2\Dcu\D7
 
-%dpath% %usepkg% -DCTXDBEXT30 -N%dcu% -E%buildto% -I%include% -U%include% -B CtxAnyDAC2.dpr
+%dpath% %usepkg% -N%dcu% -E%buildto% -I%include% -U%include% -B CtxAnyDAC2.dpr
 
 echo Done.
 
