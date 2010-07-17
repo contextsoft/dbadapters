@@ -2,7 +2,7 @@
 
 [Setup]
 AppName=Additional Database Extensions Adapters
-AppVerName=Additional Database Extensions Adapters v.3.15
+AppVerName=Additional Database Extensions Adapters v.3.16
 AppCopyright=Copyright © 2003-2010, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3\bin
 DefaultGroupName=Additional Database Extensions Adapters
@@ -62,8 +62,8 @@ Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: s
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: NEXUS 3; ValueData: {app}\CtxNX3.dll; Flags: uninsdeletevalue; Components: NEXUS3; Check: IsRegAdapter('NEXUS3')
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: DB Express; ValueData: {app}\CtxDBX.dll; Flags: uninsdeletevalue; Components: DBX; Check: IsRegAdapter('DBX')
 Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxAnyDAC.dll; Flags: uninsdeletevalue; Components: AnyDAC; Check: IsRegAdapter('AnyDAC')
-Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxAnyDAC2.dll; Flags: uninsdeletevalue; Components: AnyDAC2; Check: IsRegAdapter('AnyDAC2')
-Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC; ValueData: {app}\CtxSQLite.dll; Flags: uninsdeletevalue; Components: SQLite; Check: IsRegAdapter('SQLite')
+Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: AnyDAC 2; ValueData: {app}\CtxAnyDAC2.dll; Flags: uninsdeletevalue; Components: AnyDAC2; Check: IsRegAdapter('AnyDAC2')
+Root: HKCU; Subkey: Software\Context Software\DBDesigner3\Adapters; ValueType: string; ValueName: SQLite; ValueData: {app}\CtxSQLite.dll; Flags: uninsdeletevalue; Components: SQLite; Check: IsRegAdapter('SQLite')
 
 [Code]
 function IsRegAdapter(const CompName: String): Boolean;

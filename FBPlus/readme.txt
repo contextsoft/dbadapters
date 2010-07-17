@@ -3,7 +3,7 @@ Context Database Extensions - FIBPlus Adapter
 Copyright (c) 2006-2010, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.15
+Version: 3.16
 
 
   This package contains freeware add-ons to Context

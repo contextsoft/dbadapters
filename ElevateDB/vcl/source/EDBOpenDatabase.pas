@@ -265,7 +265,8 @@ begin
         else EDBSession.RemoteCompression := INTERNET_COMPRESSION;
         try
           EDBSession.Connected := True;
-          EDBSession.GetDatabaseNames(Items);
+          //EDBSession.GetDatabaseNames(Items);
+          EDBSession.GetDatabases(Items);
         except
           // We don't care about exceptions here
         end;
