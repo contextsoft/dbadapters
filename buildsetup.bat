@@ -9,3 +9,5 @@
 @echo Building %package%.iss...
 @%innosetup% %package%.iss > %package%.log
 @echo Done.
+
+release 317
