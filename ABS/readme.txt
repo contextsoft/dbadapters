@@ -3,7 +3,7 @@ Context Database Extensions - Absolute Database Adapter
 Copyright (c) 2006-2010, Context Software LLC.
 All Rights Reserved
 -------------------------------------------------------
-Version: 3.20
+Version: 3.21
 
   This package contains freeware add-ons to Context
   Database Extensions. All software in this package comes
