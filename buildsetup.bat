@@ -10,4 +10,4 @@
 @%innosetup% %package%.iss > %package%.log
 @echo Done.
 
-release 321
+release 322
