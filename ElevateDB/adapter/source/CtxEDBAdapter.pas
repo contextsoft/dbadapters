@@ -64,11 +64,53 @@ begin
   end;
 end;
 
+{$IFDEF VER150}
 function TCtxEDBAdapter.ExecuteVerb(DatabaseID, Verb: Integer;
   var Data: OleVariant): Integer;
 begin
   Result := ExecuteVerbExt(FDatabases, DatabaseID, Verb, Data);
 end;
+{$ELSE}
+function TCtxEDBAdapter.ExecuteVerb(DatabaseID, Verb: Integer;
+  var Data: OleVariant): Integer;
+var
+  Idx: Integer;
+  ResultSet: TDataSet;
+begin
+  Idx := FDatabases.IndexOf(TObject(DatabaseID));
+  Result := 0;
+  if (Idx < 0) or (DatabaseID = 0) then
+    Result := -1
+  else with TEDBDatabaseExt(DatabaseID) do
+  begin
+    case Verb of
+      // dvCreateDatabase:; not used currently
+      dvReverseEngineer: begin
+        ReverseEngineer;
+        Data := StrToVarArray(Schema.SaveToStr);
+      end;
+      dvGetVersion: Data := VersionToStr(GetVersion);
+      dvSetVersion: SetVersion(StrToVersion(Data));
+      dvExecuteSQL: begin
+        ResultSet := nil;
+        try
+          ExecuteStatement(VarToStr(Data), @ResultSet);
+          // IProviderSupport(Query).PSExecuteStatement(VarToStr(Data), AParams, @ResultSet);
+          if (ResultSet <> nil) and (ResultSet.FieldCount > 0) then
+            Data := DataSetToVariant(ResultSet);
+        finally
+          FreeAndNil(ResultSet);
+        end;
+      end;
+      else begin
+        Result := -1;
+      end;
+    end;
+  end;
+  if Result <> 0 then
+    Data := Format(SOperationNotSupported, [GetDriverName]);
+end;
+{$ENDIF}
 
 function TCtxEDBAdapter.GetDriverName: OleVariant;
 begin
