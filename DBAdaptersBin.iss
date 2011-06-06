@@ -2,7 +2,7 @@
 
 [Setup]
 AppName=Additional Database Extensions Adapters
-AppVerName=Additional Database Extensions Adapters v.3.22
+AppVerName=Additional Database Extensions Adapters v.3.24
 AppCopyright=Copyright © 2003-2010, Context Software LLC.
 DefaultDirName={pf}\Context Software\DBAdapters3\bin
 DefaultGroupName=Additional Database Extensions Adapters
