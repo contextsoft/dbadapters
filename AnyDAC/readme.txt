@@ -3,7 +3,7 @@ Context Database Extensions - AnyDAC Adapter
 Copyright (c) 2006-2010, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.25
+Version: 3.26
 
 
   This package contains freeware add-ons to Context

@@ -198,6 +198,11 @@ begin
 end;
 
 procedure TnxOpenDatabase.LoadDatabases;
+{$IFDEF NX_REMOTESERVER}
+var
+  _Host: string;
+  _Port: integer;
+{$ENDIF}
 begin
   btnSelect.Visible := rbLocal.Checked;
   cbxServer.Enabled := rbRemote.Checked;
@@ -222,7 +227,13 @@ begin
           2: nxRemoteServerEngine.Transport := nxRegisteredCOMTransport;
         end;
         nxRemoteServerEngine.Transport.Close;
-        nxRemoteServerEngine.Transport.ServerName := cbxServer.Text;
+{        nxRemoteServerEngine.Transport.ServerName := cbxServer.Text;
+        ShowMessage(nxRemoteServerEngine.Transport.ServerName);}
+
+        DecodeServerName(cbxServer.Text, _Host, _Port);
+        nxRemoteServerEngine.Transport.ServerName := _Host;
+        if nxRemoteServerEngine.Transport is TnxBasePooledTransport then
+          (nxRemoteServerEngine.Transport as TnxBasePooledTransport).Port := _Port;
         try
           nxSession.Open;
           nxSession.GetAliasNames(Items);

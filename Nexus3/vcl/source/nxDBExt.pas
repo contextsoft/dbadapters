@@ -136,8 +136,8 @@ type
   function GetDatabaseURL(nxDatabase: TnxDatabase): String;
   {:$ Assigned database and session parameters accoriding to the provided database URL. }
   procedure SetDatabaseURL(nxDatabase: TnxDatabase; DatabaseURL: String);
-
   procedure Register;
+  procedure DecodeServerName(AServerName: string; var AHost: string; var APort: integer);
 
 resourcestring
   SDatabaseClosed = 'Cannot perform this operation on a closed database';
@@ -154,8 +154,13 @@ uses
 {$IFDEF NX_REMOTESERVER}
   nxreRemoteServerEngine,
   nxllTransport, nxtwWinsockTransport, nxtnNamedPipeTransport, nxtcCOMTransport,
+  nxptBasePooledTransport,
 {$ENDIF}
   nxsdDataDictionary, nxsrServerEngine, nxsdTypes;
+
+const
+  DEFAULT_PORT = 16000;
+
 
 { General Helper Rountines }
 
@@ -176,6 +181,22 @@ begin
   else
     result := Transport.GetName;
 end;
+
+procedure DecodeServerName(AServerName: string; var AHost: string; var APort: integer);
+var
+  P: integer;
+begin
+  P := AnsiPos(':', AServerName);
+  if P > 0 then
+  begin
+    APort := StrToIntDef(copy(AServerName, P+1, Length(AServerName)), DEFAULT_PORT);
+    AHost := copy(AServerName, 1, P-1);
+  end else
+  begin
+    APort := DEFAULT_PORT;
+    AHost := AServerName;
+  end;
+end;
 {$ENDIF}
 
 function GetDatabaseURL(nxDatabase: TnxDatabase): String;
@@ -184,6 +205,7 @@ var
   Engine: TnxBaseServerEngine;
 {$IFDEF NX_REMOTESERVER}
   Transport: TnxBaseTransport;
+  _ServerName: string;
 {$ENDIF}
 begin
   result := '';
@@ -196,12 +218,17 @@ begin
   if DatabaseName = '' then
     DatabaseName := nxDatabase.AliasPath;
 {$IFDEF NX_REMOTESERVER}
-  if Engine is TnxRemoteServerEngine then begin
+  if Engine is TnxRemoteServerEngine then
+  begin
     Transport := TnxRemoteServerEngine(Engine).Transport;
     if Transport = nil then
       exit;
+    _ServerName := Transport.ServerName;
+    if (Transport is TnxBasePooledTransport)
+      and (TnxBasePooledTransport(Transport).Port <> DEFAULT_PORT) then
+      _ServerName := _ServerName + ':' + IntToStr(TnxBasePooledTransport(Transport).Port);
     Result := EncodeDatabaseURL(GetProtocolName(Transport),
-      Transport.ServerName, DatabaseName);
+      _ServerName, DatabaseName);
   end
   else
 {$ENDIF}
@@ -235,11 +262,19 @@ begin
 end;
 
 function GetRemoteServerEngine(AOwner: TComponent; const ConnectionType, RemoteHost: string): TnxRemoteServerEngine;
+var
+  _Host: string;
+  _Port: integer;
 begin
   result := TnxRemoteServerEngine.Create(AOwner);
   result.Transport := GetTransport(AOwner, ConnectionType);
   if result.Transport <> nil then
-    result.Transport.ServerName := RemoteHost;
+  begin
+    DecodeServerName(RemoteHost, _Host, _Port);
+    result.Transport.ServerName := _Host;
+    if result.Transport is TnxBasePooledTransport then
+      (result.Transport as TnxBasePooledTransport).Port := _Port;
+  end;
 end;
 
 function CheckTransportType(AOwner: TComponent; Engine: TnxRemoteServerEngine; const ConnectionType: string): TnxBaseTransport;
@@ -276,6 +311,7 @@ var
   Engine: TnxBaseServerEngine;
 {$IFDEF NX_REMOTESERVER}
   Transport: TnxBaseTransport;
+  _Port: integer;
 {$ENDIF}
 begin
   DecodeDatabaseURL(DatabaseURL, ConnectionType, RemoteHost, DatabaseName);
@@ -289,6 +325,7 @@ begin
   nxDatabase.Session.Active := False;
 
   Engine := nxDatabase.Session.ServerEngine;
+
   if ConnectionType = '' then
   begin
     if (Engine = nil) and (nxDatabase.Owner <> nil) then
@@ -297,10 +334,15 @@ begin
   begin
 {$IFDEF NX_REMOTESERVER}
     if (Engine = nil) or not (Engine is TnxRemoteServerEngine) then
-      TnxSession(nxDatabase.Session).ServerEngine := GetRemoteServerEngine(nxDatabase, ConnectionType, RemoteHost)
-    else begin
+    begin
+      TnxSession(nxDatabase.Session).ServerEngine := GetRemoteServerEngine(nxDatabase, ConnectionType, RemoteHost);
+    end else 
+    begin
+      DecodeServerName(RemoteHost, RemoteHost, _Port);
       Transport := CheckTransportType(nxDatabase, TnxRemoteServerEngine(Engine), ConnectionType);
       Transport.ServerName := RemoteHost;
+      if Transport is TnxBasePooledTransport then
+        (Transport as TnxBasePooledTransport).Port := _Port;
     end;
 {$ENDIF}
   end;

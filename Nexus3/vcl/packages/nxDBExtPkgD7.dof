@@ -105,10 +105,6 @@ HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
-[Language]
-ActiveLang=
-ProjectLang=$00000409
-RootDir=
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=0
@@ -135,5 +131,11 @@ ProductName=
 ProductVersion=1.0.0.0
 Comments=
 [Excluded Packages]
-E:\DBEngines\DBISAM4\d7\code\db422d7d.bpl=DBISAM Design-Time Package
-E:\D7\Projects\Bpl\NexusDB108dv70.bpl=NexusDB 1.08 - designtime - VCL70
+E:\projects\sdk\db\dbisam3\d7\code\db329d7d.bpl=DBISAM Database System Design-Time Package
+c:\program files\borland\delphi7\Projects\Bpl\EDBExtPkgD7.bpl=Context Database Extensions (Elevate DB)
+[HistoryLists\hlConditionals]
+Count=1
+Item0=NX_REMOTESERVER
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
