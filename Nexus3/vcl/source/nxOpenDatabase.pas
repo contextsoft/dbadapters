@@ -227,9 +227,6 @@ begin
           2: nxRemoteServerEngine.Transport := nxRegisteredCOMTransport;
         end;
         nxRemoteServerEngine.Transport.Close;
-{        nxRemoteServerEngine.Transport.ServerName := cbxServer.Text;
-        ShowMessage(nxRemoteServerEngine.Transport.ServerName);}
-
         DecodeServerName(cbxServer.Text, _Host, _Port);
         nxRemoteServerEngine.Transport.ServerName := _Host;
         if nxRemoteServerEngine.Transport is TnxBasePooledTransport then

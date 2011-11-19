@@ -197,6 +197,7 @@ begin
     AHost := AServerName;
   end;
 end;
+
 {$ENDIF}
 
 function GetDatabaseURL(nxDatabase: TnxDatabase): String;
@@ -333,13 +334,18 @@ begin
   end else
   begin
 {$IFDEF NX_REMOTESERVER}
+    if (Engine <> nil) and (Engine is TnxRemoteServerEngine) and ((Engine as TnxRemoteServerEngine).Transport <> nil) then
+    begin
+      TnxRemoteServerEngine(Engine).Transport.Free;
+      TnxRemoteServerEngine(Engine).Transport := nil;
+    end;
     if (Engine = nil) or not (Engine is TnxRemoteServerEngine) then
     begin
       TnxSession(nxDatabase.Session).ServerEngine := GetRemoteServerEngine(nxDatabase, ConnectionType, RemoteHost);
-    end else 
+    end else
     begin
-      DecodeServerName(RemoteHost, RemoteHost, _Port);
       Transport := CheckTransportType(nxDatabase, TnxRemoteServerEngine(Engine), ConnectionType);
+      DecodeServerName(RemoteHost, RemoteHost, _Port);
       Transport.ServerName := RemoteHost;
       if Transport is TnxBasePooledTransport then
         (Transport as TnxBasePooledTransport).Port := _Port;
