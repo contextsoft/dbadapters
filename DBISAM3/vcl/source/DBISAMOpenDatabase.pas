@@ -170,7 +170,6 @@ begin
       end;
 end;
 
-
 function GetDatabaseURL(DBISAMDatabase: TDBISAMDatabase): String;
 var
   ConnectionType, RemoteHost, DatabaseName: String;
