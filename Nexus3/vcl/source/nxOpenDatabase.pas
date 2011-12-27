@@ -289,7 +289,7 @@ begin
     Exit;
   if SHGetPathFromIDList(ItemIDList,@Buffer) then begin
     Result := True;
-    DirectoryStr := StrPas(@Buffer);
+    DirectoryStr := StrPas({$IFDEF VER230}PWideChar(@Buffer){$ELSE}@Buffer{$ENDIF});
   end;
 end;
 

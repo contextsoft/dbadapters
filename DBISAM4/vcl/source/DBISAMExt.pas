@@ -442,7 +442,9 @@ type
     procedure InternalDelete; override;
 
     procedure SetAutoFieldsProperties(const Value: Boolean);
-    procedure DataEvent(Event: TDataEvent; Info: Integer); override;
+
+    procedure DataEvent(Event: TDataEvent;
+    {$IFDEF D15ORHIGHER}Info: NativeInt{$ELSE} Info: Integer{$ENDIF}); override;
   public
     { Public declarations }
     {:: Creates an instance of TDBISAMTableExt component. }
@@ -519,7 +521,8 @@ type
     procedure InternalDelete; override;
 
     procedure SetAutoFieldsProperties(const Value: Boolean);
-    procedure DataEvent(Event: TDataEvent; Info: Integer); override;
+    procedure DataEvent(Event: TDataEvent;
+    {$IFDEF D15ORHIGHER}Info: NativeInt{$ELSE} Info: Integer{$ENDIF}); override;
     procedure SetSQL(const Value: TStrings);
     function GetMacros: TMacros;
     procedure SetMacros(Value: TMacros);
@@ -2067,7 +2070,8 @@ begin
   FUpdateOptions := uoAll;
 end;
 
-procedure TDBISAMTableExt.DataEvent(Event: TDataEvent; Info: Integer);
+procedure TDBISAMTableExt.DataEvent(Event: TDataEvent;
+  {$IFDEF D15ORHIGHER}Info: NativeInt{$ELSE}Info: Integer{$ENDIF});
 begin
   if Event = dePropertyChange then
     FFieldsPropertiesUpdated := False;
@@ -2265,7 +2269,9 @@ begin
   inherited CheckActive;
 end;
 
-procedure TDBISAMQueryExt.DataEvent(Event: TDataEvent; Info: Integer);
+
+procedure TDBISAMQueryExt.DataEvent(Event: TDataEvent;
+  {$IFDEF D15ORHIGHER}Info: NativeInt{$ELSE}Info: Integer{$ENDIF});
 begin
   if Event = dePropertyChange then
     FFieldsPropertiesUpdated := False;

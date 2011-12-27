@@ -1,7 +1,7 @@
-package DBISAMExtPkgDXE2;
+package nxDBExtPkgDXE2;
 
 {$R *.res}
-{$R '..\source\DBISAMExtReg.dcr'}
+{$R '..\source\nxDBExtReg.dcr'}
 {$ALIGN 8}
 {$ASSERTIONS ON}
 {$BOOLEVAL OFF}
@@ -20,10 +20,10 @@ package DBISAMExtPkgDXE2;
 {$STACKFRAMES OFF}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
-{$WRITEABLECONST ON}
+{$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DESCRIPTION 'Context Database Extensions (DBISAM 4)'}
+{$DESCRIPTION 'Context Database Extensions (Nexus 3)'}
 {$IMPLICITBUILD OFF}
 
 requires
@@ -31,12 +31,11 @@ requires
   designide,
   vclx,
   vcldb,
-  DbExtPkgD2010;
+  DbExtPkgDXE2;
 
 contains
-  DBISAMExtReg in '..\source\DBISAMExtReg.pas',
-  DBISAMEv in '..\source\DBISAMEv.pas',
-  DBISAMExt in '..\source\DBISAMExt.pas',
-  DBISAMOpenDatabase in '..\source\DBISAMOpenDatabase.pas' {DBISAMOpenDatabase};
+  nxDBExtReg in '..\source\nxDBExtReg.pas',
+  nxDBExt in '..\source\nxDBExt.pas',
+  nxOpenDatabase in '..\source\nxOpenDatabase.pas';
 
 end.
