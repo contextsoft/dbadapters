@@ -1,9 +1,9 @@
 ==================================================
 Context Database Extensions - DBISAM 3 Adapter
-Copyright (c) 2006-2010, Context Software LLC.
+Copyright (c) 2006-2012, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.29
+Version: 3.30
 
 
   This package contains freeware add-ons to Context
