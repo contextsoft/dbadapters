@@ -1,6 +1,6 @@
 ==================================================
 Context Database Extensions - Nexus 1 Adapter
-Copyright (c) 2006-2012, Context Software LLC.
+Copyright (c) 2006-2013, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
 Version: 3.30
