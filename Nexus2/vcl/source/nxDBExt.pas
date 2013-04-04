@@ -458,7 +458,7 @@ end;
 
 function TnxDatabaseExt.GetDriverName: String;
 begin
-  Result := 'ADO';
+  Result := 'Nexus 2';
 end;
 
 function TnxDatabaseExt.GetDatabaseURL: String;

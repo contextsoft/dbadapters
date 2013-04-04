@@ -401,7 +401,7 @@ end;
 
 function TEDBDatabaseExt.GetDriverName: String;
 begin
-  Result := 'ADO';
+  Result := 'EDB';
 end;
 
 function TEDBDatabaseExt.GetDatabaseURL: String;
