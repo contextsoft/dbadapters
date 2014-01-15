@@ -124,6 +124,8 @@ var
   Session: TEDBSession;
   ParamList: TStringList;
   ConfigFile: String;
+  RemotePort: String;
+  RemoteEncryptionPassword: String;
 begin
   Session := TEDBSession.Create(nil);
   Database := TEDBDatabaseExt.Create(nil);
@@ -136,11 +138,19 @@ begin
       Session.LoginUser := ParamList.Values['User Name'];
       Session.LoginPassword := ParamList.Values['Password'];
       ConfigFile := ParamList.Values['Config File'];     
+      RemotePort := ParamList.Values['RemotePort'];
+      RemoteEncryptionPassword := ParamList.Values['RemoteEncryptionPassword'];
       if ConfigFile <> '' then
       begin
         Session.LocalConfigPath :=  ExtractFilePath(ConfigFile);
         Session.LocalConfigName :=  ExtractFileName(ConfigFile);
       end;
+
+      if RemotePort <> '' then
+        Session.RemotePort := StrToIntDef(RemotePort, Session.RemotePort);
+
+      Session.RemoteEncryption := RemoteEncryptionPassword <> '';
+      Session.RemoteEncryptionPassword := RemoteEncryptionPassword;
     finally
       ParamList.Free;
     end;
@@ -182,7 +192,7 @@ end;
 function TCtxEDBAdapter.GetParamNames(var Params: OleVariant): Integer;
 begin
   Result := 0;
-  Params := '"User Name=","Password=","Config File="';
+  Params := '"User Name=","Password=","Config File=","RemotePort=","RemoteEncryptionPassword="';
 end;
 
 
