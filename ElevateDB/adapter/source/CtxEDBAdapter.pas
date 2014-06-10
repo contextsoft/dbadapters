@@ -150,7 +150,8 @@ begin
         Session.RemotePort := StrToIntDef(RemotePort, Session.RemotePort);
 
       Session.RemoteEncryption := RemoteEncryptionPassword <> '';
-      Session.RemoteEncryptionPassword := RemoteEncryptionPassword;
+      if Session.RemoteEncryption then
+        Session.RemoteEncryptionPassword := RemoteEncryptionPassword;
     finally
       ParamList.Free;
     end;

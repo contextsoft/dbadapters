@@ -1,9 +1,9 @@
 ==================================================
 Context Database Extensions - DBISAM 4 Adapter
-Copyright (c) 2006-2013, Context Software LLC.
+Copyright (c) 2006-2014, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.31
+Version: 3.35
 
 
   This package contains freeware add-ons to Context
