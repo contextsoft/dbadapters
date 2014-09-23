@@ -3,7 +3,7 @@ Context Database Extensions - MySQL Adapter
 Copyright (c) 2006-2014, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.35
+Version: 3.36
 
 
   This package contains freeware add-ons to Context
