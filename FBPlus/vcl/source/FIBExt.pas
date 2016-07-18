@@ -118,6 +118,8 @@ type
     { Parent object is always a table or schema. }
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -724,6 +726,12 @@ function TFIBDatabaseExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxFIBCommand.Create(Self);
 end;
+
+function TFIBDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 
 { TCtxFIBCommand }
 

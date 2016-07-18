@@ -118,6 +118,9 @@ type
     procedure GetTableNames(List: TStrings; SystemTables: Boolean = False);
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
+
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -557,6 +560,11 @@ end;
 function TADConnectionExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
+end;
+
+function TADConnectionExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
 end;
 
 end.

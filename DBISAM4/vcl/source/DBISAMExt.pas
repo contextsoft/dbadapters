@@ -29,6 +29,10 @@ type
   TRecordBuffer = PChar;
 {$ENDIF}
 
+{$IFDEF D15UP}
+  {$DEFINE D15ORHIGHER}
+{$ENDIF}
+
 
   TDBISAMDatabaseExt = class;
   TDBISAMTableExt = class;
@@ -362,6 +366,8 @@ type
     {:$ True if the database is being replicated or imported. }
     {:: This property is read-only. }
     property Replicating: Boolean read FReplicating;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -2002,6 +2008,12 @@ function TDBISAMDatabaseExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
+
+function TDBISAMDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 
 { TDBISAMTableExt }
 

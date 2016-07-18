@@ -122,6 +122,8 @@ type
     // property DriverRegistryFile;
     {:$ Transaction Descriptor Record }
     property TransactionDesc: TTransactionDesc read FTransactionDesc write FTransactionDesc;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -545,6 +547,11 @@ end;
 function TSQLConnectionExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
+end;
+
+function TSQLConnectionExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
 end;
 
 end.

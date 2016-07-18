@@ -3,7 +3,7 @@ Context Database Extensions - Nexus 1 Adapter
 Copyright (c) 2006-2014, Context Software LLC.
 All Rights Reserved
 --------------------------------------------------
-Version: 3.37
+Version: 3.40
 
 
   This package contains freeware add-ons to Context

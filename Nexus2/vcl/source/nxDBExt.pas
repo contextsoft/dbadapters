@@ -115,6 +115,8 @@ type
     function GetIndexDefs(DataSet: TDataSet): TIndexDefs;
     function GetSystemTableName: String;
     function CreateCommand: TCtxDataCommand;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -1113,6 +1115,12 @@ function TnxDatabaseExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
+
+function TnxDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 
 
 end.

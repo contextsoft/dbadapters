@@ -114,6 +114,8 @@ type
     function GetSystemTableName: String;
 
     function CreateCommand: TCtxDataCommand;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -656,6 +658,12 @@ function TEDBDatabaseExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
+
+function TEDBDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 
 end.
 

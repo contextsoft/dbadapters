@@ -138,6 +138,9 @@ type
     {:: The information about the database version is stored in a System table. }
     property Version: TSchemaVersion read GetVersion write SetVersion;
     property SystemTableName: String read GetSystemTableName write SetSystemTableName;
+
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -699,5 +702,11 @@ function TABSDatabaseExt.CreateCommand: TCtxDataCommand;
 begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
+
+function TABSDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 
 end.

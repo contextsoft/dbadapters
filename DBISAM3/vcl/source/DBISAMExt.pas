@@ -355,6 +355,8 @@ type
     {:$ True if the database is being replicated or imported. }
     {:: This property is read-only. }
     property Replicating: Boolean read FReplicating;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -1961,6 +1963,12 @@ begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
 
+function TDBISAMDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
+
 { TDBISAMTableExt }
 
 procedure TDBISAMTableExt.AssignFieldDefsFromFields(Source: TDataSet = nil);
@@ -2496,5 +2504,7 @@ begin
   end else
     Result := DBExecute(Self, ASQL, AParams);
 end;
+
+
 
 end.

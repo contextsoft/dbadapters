@@ -346,6 +346,8 @@ type
     {:$ True if the database is being replicated or imported. }
     {:: This property is read-only. }
     property Replicating: Boolean read FReplicating;
+    { Plan informaion }
+    function GetQueryPlan(Query: TDataSet): String;
   published
     { Published properties }
     {:$ Reference to a TDatabaseSchema component. }
@@ -1740,6 +1742,11 @@ begin
   Result := TCtxDataSetCommand.Create(Self);
 end;
 
+function TnxDatabaseExt.GetQueryPlan(Query: TDataSet): String;
+begin
+  Result := ''; // not implemented
+end;
+
 { TnxTableExt }
 
 procedure TnxTableExt.AssignFieldDefsFromFields(Source: TDataSet = nil);
@@ -2258,6 +2265,7 @@ begin
     RecreateMacros;
   end;
 end;
+
 
 
 end.
